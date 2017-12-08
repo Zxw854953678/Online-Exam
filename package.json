@@ -1,0 +1,19 @@
+{
+  "name": "online_exam",
+  "version": "1.0.0",
+  "description": "online exam system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zxw854953678/Online-Exam.git"
+  },
+  "author": "ZhouXiaoWen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zxw854953678/Online-Exam/issues"
+  },
+  "homepage": "https://github.com/Zxw854953678/Online-Exam#readme"
+}
