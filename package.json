@@ -4,7 +4,7 @@
   "description": "online exam system",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Zxw854953678/Online-Exam/issues"
   },
-  "homepage": "https://github.com/Zxw854953678/Online-Exam#readme"
+  "homepage": "https://github.com/Zxw854953678/Online-Exam#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.6"
+  }
 }
