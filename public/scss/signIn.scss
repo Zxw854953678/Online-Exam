@@ -1,0 +1,17 @@
+@import "layout";
+$headerColorTop: #6E7FA0;
+$headerColorBottom: #505E79;
+$white: #ffffff;
+$loginColorTop: #F9F9F9;
+$loginColorBottom: #EFEFEF;
+
+header {
+  height: 50px;
+  line-height: 50px;
+  color: $white;
+  @include linearGradient(top, $headerColorTop, $headerColorBottom, #5E6E8B);
+}
+
+form{
+  width: 400px;
+}

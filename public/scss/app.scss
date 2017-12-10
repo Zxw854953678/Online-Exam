@@ -1,0 +1,56 @@
+@import "layout";
+
+$headerColorTop: #6E7FA0;
+$headerColorBottom: #505E79;
+$white: #ffffff;
+$contentColorTop: #F9F9F9;
+$contentColorBottom: #EFEFEF;
+
+%fSize {
+  @media only screen and (min-width: 992px) {
+    font-size: 40px;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    font-size: 28px;
+  }
+  @media only screen and (min-width: 300px) and (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-family: "微软雅黑", "Times New Roman";
+}
+
+header {
+  height: 50px;
+  line-height: 50px;
+  color: $white;
+  @include linearGradient(top, $headerColorTop, $headerColorBottom, #5E6E8B);
+}
+
+.container {
+  margin: 50px auto;
+  a {
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    @include linearGradient(top, $contentColorTop, $contentColorBottom, #F4F4F4);
+    @extend %fSize;
+    text-align: center;
+    color: #333333;
+
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+    &:first-child {
+      @media only screen and (min-width: 1200px) {
+        margin-right: 5px;
+      }
+      @media only screen and (max-width: 991px) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

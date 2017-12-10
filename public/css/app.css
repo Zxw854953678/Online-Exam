@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@media only screen and (min-width: 992px) {
+  .container a {
+    font-size: 40px; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .container a {
+    font-size: 28px; } }
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  .container a {
+    font-size: 18px; } }
+
+body {
+  font-family: "微软雅黑", "Times New Roman"; }
+
+header {
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+  background: #5E6E8B;
+  background: -webkit-linear-gradient(top, #6E7FA0, #505E79);
+  background: -moz-linear-gradient(top, #6E7FA0, #505E79);
+  background: -o-linear-gradient(top, #6E7FA0, #505E79);
+  background: -ms-linear-gradient(top, #6E7FA0, #505E79); }
+
+.container {
+  margin: 50px auto; }
+  .container a {
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    background: #F4F4F4;
+    background: -webkit-linear-gradient(top, #F9F9F9, #EFEFEF);
+    background: -moz-linear-gradient(top, #F9F9F9, #EFEFEF);
+    background: -o-linear-gradient(top, #F9F9F9, #EFEFEF);
+    background: -ms-linear-gradient(top, #F9F9F9, #EFEFEF);
+    text-align: center;
+    color: #333333; }
+    .container a:hover {
+      text-decoration: none;
+      cursor: pointer; }
+    @media only screen and (min-width: 1200px) {
+      .container a:first-child {
+        margin-right: 5px; } }
+    @media only screen and (max-width: 991px) {
+      .container a:first-child {
+        margin-bottom: 24px; } }
+
+/*# sourceMappingURL=app.css.map */
