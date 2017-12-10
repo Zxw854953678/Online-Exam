@@ -1,3 +1,10 @@
+section.container-fluid form {
+  border: 1px solid #CCCCCC;
+  border-radius: 5px; }
+
+body {
+  background-color: #FAFAFA; }
+
 header {
   height: 50px;
   line-height: 50px;
@@ -8,7 +15,38 @@ header {
   background: -o-linear-gradient(top, #6E7FA0, #505E79);
   background: -ms-linear-gradient(top, #6E7FA0, #505E79); }
 
-form {
-  width: 400px; }
+section.container-fluid {
+  padding-top: 50px; }
+  section.container-fluid form {
+    line-height: 30px;
+    background-color: #ffffff; }
+    section.container-fluid form label {
+      font-weight: normal; }
+    section.container-fluid form .form-group, section.container-fluid form .title {
+      padding: 0 15px; }
+    section.container-fluid form .title {
+      background: #F4F4F4;
+      background: -webkit-linear-gradient(top, #F9F9F9, #EFEFEF);
+      background: -moz-linear-gradient(top, #F9F9F9, #EFEFEF);
+      background: -o-linear-gradient(top, #F9F9F9, #EFEFEF);
+      background: -ms-linear-gradient(top, #F9F9F9, #EFEFEF);
+      border-bottom: 1px solid #CCCCCC;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px; }
+    section.container-fluid form .icon {
+      margin-top: 10px;
+      margin-right: 15px; }
+    section.container-fluid form .remember {
+      margin-right: 2px; }
+    section.container-fluid form .submit {
+      line-height: 28px;
+      padding: 0 12px;
+      background-color: #444D5E;
+      color: #ffffff;
+      border-radius: 3px;
+      border: none; }
+  section.container-fluid .signUp {
+    margin-top: 20px;
+    line-height: 30px; }
 
 /*# sourceMappingURL=signIn.css.map */

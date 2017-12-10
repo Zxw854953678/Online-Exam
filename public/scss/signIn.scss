@@ -1,9 +1,22 @@
 @import "layout";
+
 $headerColorTop: #6E7FA0;
 $headerColorBottom: #505E79;
 $white: #ffffff;
 $loginColorTop: #F9F9F9;
 $loginColorBottom: #EFEFEF;
+$contentColorTop: #F9F9F9;
+$contentColorBottom: #EFEFEF;
+$borderRadius: 5px;
+
+%boxBoder {
+  border: 1px solid #CCCCCC;
+  border-radius: $borderRadius;
+}
+
+body {
+  background-color: #FAFAFA;
+}
 
 header {
   height: 50px;
@@ -12,6 +25,44 @@ header {
   @include linearGradient(top, $headerColorTop, $headerColorBottom, #5E6E8B);
 }
 
-form{
-  width: 400px;
+section.container-fluid {
+  padding-top: 50px;
+
+  form {
+    line-height: 30px;
+
+    background-color: $white;
+    @extend %boxBoder;
+    label {
+      font-weight: normal;
+    }
+    .form-group, .title {
+      padding: 0 15px;
+    }
+    .title {
+      @include linearGradient(top, $contentColorTop, $contentColorBottom, #F4F4F4);
+      border-bottom: 1px solid #CCCCCC;
+      border-top-left-radius: $borderRadius;
+      border-top-right-radius: $borderRadius;
+    }
+    .icon {
+      margin-top: 10px;
+      margin-right: 15px;
+    }
+    .remember {
+      margin-right: 2px;
+    }
+    .submit {
+      line-height: 28px;
+      padding: 0 12px;
+      background-color: #444D5E;
+      color: $white;
+      border-radius: 3px;
+      border: none;
+    }
+  }
+  .signUp {
+    margin-top: 20px;
+    line-height: 30px;
+  }
 }

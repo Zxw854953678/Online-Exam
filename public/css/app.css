@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @media only screen and (min-width: 992px) {
   .container a {
     font-size: 40px; } }
@@ -10,7 +9,7 @@
     font-size: 18px; } }
 
 body {
-  font-family: "微软雅黑", "Times New Roman"; }
+  background-color: #FAFAFA; }
 
 header {
   height: 50px;
