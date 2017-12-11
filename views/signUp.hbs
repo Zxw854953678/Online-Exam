@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>学生登录</title>
+  <link rel="stylesheet" href="/utils/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/utils/datetimepicker/jquery.datetimepicker.min.css">
+  <link rel="stylesheet" href="/css/signUp.css">
+  <script src="/utils/jQuery/jquery-3.2.1.min.js"></script>
+  <script src="/utils/bootstrap/bootstrap.min.js"></script>
+  <script src="/utils/validator/validator.min.js"></script>
+  <script src="/utils/datetimepicker/jquery.datetimepicker.full.js"></script>
+  <script src="/js/signUp.js"></script>
+</head>
+<body>
+<header class="container-fluid">
+  在线考试
+</header>
+<section class="container-fluid">
+  <div class="col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+    <form action="/signUp" method="post">
+      <div class="title">Sign Up</div>
+      <div class="form-group has-feedback">
+        <label>Student ID</label>
+        <input type="text" class="form-control" name="sno" autofocus required data-error="学号格式错误" pattern="^S[0-9]{9}$">
+        <span class="glyphicon form-control-feedback icon"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group has-feedback">
+        <label>Password</label>
+        <input type="password" class="pwdOne form-control" name="userpwd" required pattern="^[a-zA-Z0-9$_]{6,12}$"
+               data-error="密码由数字、字母、_和$组成">
+        <span class="glyphicon form-control-feedback icon"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group has-feedback">
+        <label>Confirm Password</label>
+        <input type="password" class="pwdTwo form-control" required data-match=".pwdOne" data-match-error="两次输入的密码不一致" data-error="不能为空">
+        <span class="glyphicon form-control-feedback icon"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group has-feedback">
+        <label>Your Name</label>
+        <input type="text" class="form-control" name="studentName" required pattern="^[a-zA-Z0-9\u4e00-\u9fa5]?$" data-error="不能为空">
+        <span class="glyphicon form-control-feedback icon"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group">
+        <label>sex</label>
+        <div>
+          <label for="male">
+            <input id="male" type="radio" class="" name="sex" checked value="male">男
+          </label>
+          <label for="female" class="col-md-offset-1">
+            <input id="female" type="radio" name="sex" value="female">女
+          </label>
+        </div>
+      </div>
+      <div class="form-group has-feedback">
+        <label>Email</label>
+        <input type="text" class="form-control" name="studentEmail" required data-error="邮箱格式错误"
+               pattern="^[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?$">
+        <span class="glyphicon form-control-feedback icon"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group has-feedback" id="birthDay">
+        <label>Birth</label>
+        <input id="birth" type="text" class="form-control" required name="birth">
+      </div>
+      <div class="form-group">
+        <label>Course</label>
+        <select class="form-control">
+          <option value="volvo">html课程</option>
+          <option value="saab">java课程</option>
+          <option value="opel">前端课程</option>
+          <option value="audi">大数据课程</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Class</label>
+        <input type="text" class="form-control" name="studentClass" required pattern="^[1-9][0-9]*$" data-error="输入纯数字，比如1,2,...">
+        <span class="glyphicon form-control-feedback icon"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group">
+        <span>
+          <input id="agree" type="checkbox">
+          <label for="agree">I agree with <a href="#">the Terms and Conditions</a></label>
+        </span>
+        <input type="submit" class="submit pull-right" value="Sign Up">
+      </div>
+    </form>
+    {{# if identity.isStu}}
+      <div class="row signUp">
+        <a href="/signUp" class="col-sm-7">Want new account?</a>
+      </div>
+    {{/if}}
+  </div>
+</section>
+</body>
+</html>

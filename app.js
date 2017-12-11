@@ -19,31 +19,31 @@ app.set('view engine', 'hbs');
 // 指定静态资源文件
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use("/", bodyParser.urlencoded({ extended: false }));
+//bodyParser
+app.use("/", bodyParser.urlencoded({extended: false}));
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res)=> {
   "use strict";
-  res.render('app.hbs');
+  res.render('app');
 });
 
-app.get("/student",(req,res)=>{
+// 登录
+app.get("/student", (req, res)=> {
   "use strict";
-  const data = {identity:{name:"student",isStu:true}};
-  res.render("signIn",data);
+  const data = {identity: {name: "student", isStu: true}};
+  res.render("signIn", data);
 });
-
-app.get("/teacher",(req,res)=>{
+app.get("/teacher", (req, res)=> {
   "use strict";
-  const data = {identity:{name:"teacher",isStu:false}};
-  res.render("signIn",data);
+  const data = {identity: {name: "teacher", isStu: false}};
+  res.render("signIn", data);
 });
-
-app.post("/student",(req,res)=>{
+app.post("/student", (req, res)=> {
   "use strict";
   //数据库信息比对，成功-调转到student的首页，失败-重新登录
   //成功
   const data = {};
-  res.render("index",data);
+  res.render("index", data);
 
   //失败
   // console.log(req.body.username, req.body.userpwd,req.params);
@@ -51,14 +51,26 @@ app.post("/student",(req,res)=>{
 
 });
 
-app.get("/signUp",(req,res)=>{
+// 注册 -只有学生可以注册
+app.get("/signUp", (req, res)=> {
   "use strict";
   const data = {};
-  // res.render("signIn",data);
-  res.send("注册");
+  res.render("signUp",data);
+});
+app.post("/signUp", (req, res)=> {
+  "use strict";
+  //数据库信息比对，成功-调转到app，失败-重新注册
+  //成功
+  // const data = {};
+  // res.render("app");
+
+  //失败
+  // console.log(req.body.username, req.body.userpwd,req.params);
+  res.redirect("/signUp");
+
 });
 
-app.listen(3000,()=>{
+app.listen(3000, ()=> {
   "use strict";
   console.log("server start...")
 });
