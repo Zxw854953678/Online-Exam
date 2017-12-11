@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // 模板引擎
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'hbs');
 
 // 指定静态资源文件

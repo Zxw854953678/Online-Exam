@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="/utils/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="/utils/datetimepicker/jquery.datetimepicker.min.css">
   <link rel="stylesheet" href="/css/signUp.css">
-  <script src="/utils/jQuery/jquery-3.2.1.min.js"></script>
+  <script src="/utils/jquery/jquery-3.2.1.min.js"></script>
   <script src="/utils/bootstrap/bootstrap.min.js"></script>
   <script src="/utils/validator/validator.min.js"></script>
   <script src="/utils/datetimepicker/jquery.datetimepicker.full.js"></script>
@@ -90,11 +90,9 @@
         <input type="submit" class="submit pull-right" value="Sign Up">
       </div>
     </form>
-    {{# if identity.isStu}}
-      <div class="row signUp">
-        <a href="/signUp" class="col-sm-7">Want new account?</a>
-      </div>
-    {{/if}}
+    <div class="row signUp">
+      <a href="/" class="col-sm-7">Sign In</a>
+    </div>
   </div>
 </section>
 </body>
