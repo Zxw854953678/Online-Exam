@@ -21,7 +21,8 @@ $(function () {
   console.log(maxTime);
   $('#birth').datetimepicker({
     timepicker: false,
+    validateOnBlur:false,
     format: 'Y/m/d',
-    value: "1990/01/01",
+    value: ""
   });
 });
