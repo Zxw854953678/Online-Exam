@@ -41,7 +41,8 @@ const studentSchema = new mongoose.Schema({
   exam: [{
     eTime: {
       type: Date,
-      default: new Date()
+      default: new Date(),
+      unique:true
     },
     eTitle: String,
     eScore: Number,
