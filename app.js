@@ -10,11 +10,18 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
+// mongoose.Promise = require('bluebird');
 const logger = require('morgan');
 const config = require('./config/config.js');
 
 const app = express();
+
+// 连接数据库 --mongoose
+mongoose.connect(config.dbUrl);
+mongoose.connection.on('connected', function () {
+  console.log('Mongoose connection open to ' + config.dbUrl);
+});
+mongoose.Promise = global.Promise;
 
 // 模板引擎
 app.set('views', path.join(__dirname, 'app/views'));
@@ -40,7 +47,6 @@ app.use(session({
 }));
 
 const env = 'development';
-// console.log(`------> current env ${env} <------`);
 if ('development' === env) {
   app.set('showStackError', true);
   // 使用morgan日志中间件 指定日志的输出格式

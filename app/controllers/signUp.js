@@ -14,6 +14,6 @@ exports.action = function (req, res) {
   // res.render("app");
 
   //失败
-  // console.log(req.body.username, req.body.userpwd,req.params);
+  // console.log(req.body.username, req.body.userpwd, req.params);
   res.redirect("/signUp");
 };
