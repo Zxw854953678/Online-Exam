@@ -20,8 +20,10 @@ module.exports = function (app) {
 
   // 登录后首页显示
   app.get("/index", homePage.show);
-  app.get("/index/details/:id/:no",detailsExam.show);
-  app.get("/index/details/:id",detailsExam.show);
+
+  // 首页显示后，点击“详情”，查看考生试卷
+  app.get("/index/details/:id/:no", detailsExam.show); //teachder
+  app.get("/index/details/:id", detailsExam.show);  //student
 
   // 登出
   app.get("/logout", homePage.logout);

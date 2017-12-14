@@ -4,7 +4,6 @@
 
 const Student = require("../models/student.js");
 const Teacher = require("../models/teacher.js");
-// const student = new Student();
 
 exports.logout = function (req, res) {
   res.redirect("/");
@@ -19,7 +18,6 @@ exports.show = function (req, res) {
   if (isTeacher) {
     Student.find({}, (err, result)=> {
       "use strict";
-      console.log(result);
       if (err) {
         console.log(err);
       }
