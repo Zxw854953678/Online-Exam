@@ -76,9 +76,11 @@
           </tr>
           {{#exam}}
             <tr>
-              {{#if isTeacher}}
-                <td>{{sno}}</td>
-                <td>{{name}}</td>
+              {{#if sid}}
+                <td>{{sid}}</td>
+              {{/if}}
+              {{#if sname}}
+                <td>{{sname}}</td>
               {{/if}}
               <td>{{title}}</td>
               <td>{{createTime}}</td>
