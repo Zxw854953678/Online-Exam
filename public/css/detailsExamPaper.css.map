@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAMA,IAAK;EACH,gBAAgB,EAAE,OAAO;;AAG3B,MAAO;EACL,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,IAAI;EACjB,KAAK,EATC,OAAO;ECHb,UAAU,EDawD,OAAO;ECZzE,UAAU,EAAE,8CAAoD;EAChE,UAAU,EAAE,2CAAiD;EAC7D,UAAU,EAAE,yCAA+C;EAC3D,UAAU,EAAE,0CAAgD;;ADa5D,UAAK;EACH,OAAO,EAAE,KAAK",
+"sources": ["../scss/detailsExamPaper.scss","../scss/_layout.scss"],
+"names": [],
+"file": "detailsExamPaper.css"
+}

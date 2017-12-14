@@ -1,0 +1,17 @@
+body {
+  background-color: #FAFAFA; }
+
+header {
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+  background: #5E6E8B;
+  background: -webkit-linear-gradient(top, #6E7FA0, #505E79);
+  background: -moz-linear-gradient(top, #6E7FA0, #505E79);
+  background: -o-linear-gradient(top, #6E7FA0, #505E79);
+  background: -ms-linear-gradient(top, #6E7FA0, #505E79); }
+
+.main .opt {
+  padding: 0 0px; }
+
+/*# sourceMappingURL=detailsExamPaper.css.map */

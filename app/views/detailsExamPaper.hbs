@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>在线考试</title>
+  <link rel="stylesheet" href="/utils/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/detailsExamPaper.css">
+  <script src="/utils/jquery/jquery-3.2.1.min.js"></script>
+  <script src="/utils/bootstrap/bootstrap.min.js"></script>
+  <!--<script src="/js/detailsExamPaper.js"></script>-->
+</head>
+<body>
+<header class="container-fluid">
+  在线考试
+</header>
+<section class="container-fluid">
+  <h3 class="text-center">{{title}}</h3>
+  <p class="row">
+    <span class="col-xs-12 col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-2">考试时间：{{createTime}}</span>
+    <span class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2">得分：{{score}}分</span>
+  </p>
+</section>
+<section class="col-xs-12 col-sm-8 col-sm-offset-2 main">
+  {{#if content}}
+    <ul class="list-unstyled">
+      {{#each content}}
+        <li>
+          (2分) {{this.question}} ( {{this.answer}} ) 答案：{{this.standard}}
+          {{#each this.options}}
+          <p class="opt">{{this}}</p>
+          {{/each}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

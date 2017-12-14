@@ -5,7 +5,7 @@
 const signIn = require('../app/controllers/signIn.js');
 const signUp = require('../app/controllers/signUp.js');
 const homePage = require('../app/controllers/homePage.js');
-const details = require('../app/controllers/details.js');
+const detailsExam = require('../app/controllers/detailsExamPaper.js');
 
 module.exports = function (app) {
   // 注册 -只有学生可以注册
@@ -20,7 +20,7 @@ module.exports = function (app) {
 
   // 登录后首页显示
   app.get("/index", homePage.show);
-  app.get("/index/details/:id",details.show);
+  app.get("/index/details/:id",detailsExam.show);
 
   // 登出
   app.get("/logout", homePage.logout);
