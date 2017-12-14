@@ -20,6 +20,7 @@ module.exports = function (app) {
 
   // 登录后首页显示
   app.get("/index", homePage.show);
+  app.get("/index/details/:id/:no",detailsExam.show);
   app.get("/index/details/:id",detailsExam.show);
 
   // 登出
