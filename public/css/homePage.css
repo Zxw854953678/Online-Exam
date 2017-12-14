@@ -1,0 +1,75 @@
+header {
+  color: #ffffff;
+  height: 50px;
+  line-height: 50px; }
+  @media only screen and (min-width: 768px) {
+    header {
+      background: #5E6E8B;
+      background: -webkit-linear-gradient(top, #6E7FA0, #505E79);
+      background: -moz-linear-gradient(top, #6E7FA0, #505E79);
+      background: -o-linear-gradient(top, #6E7FA0, #505E79);
+      background: -ms-linear-gradient(top, #6E7FA0, #505E79); } }
+  @media only screen and (max-width: 767px) {
+    header {
+      background: #5E6E8B;
+      background: -webkit-linear-gradient(top, #6E7FA0, #4D5B76);
+      background: -moz-linear-gradient(top, #6E7FA0, #4D5B76);
+      background: -o-linear-gradient(top, #6E7FA0, #4D5B76);
+      background: -ms-linear-gradient(top, #6E7FA0, #4D5B76); } }
+  header.navbar {
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0; }
+  header .content, header a {
+    color: #ffffff !important; }
+  header #btn {
+    background-color: #DDDDDD; }
+    header #btn span.icon-bar {
+      background-color: #ffffff; }
+  header #navbar-list {
+    padding: 0; }
+    header #navbar-list ul.navbar-nav {
+      margin: 0;
+      background: #5E6E8B;
+      background: -webkit-linear-gradient(top, #6E7FA0, #505E79);
+      background: -moz-linear-gradient(top, #6E7FA0, #505E79);
+      background: -o-linear-gradient(top, #6E7FA0, #505E79);
+      background: -ms-linear-gradient(top, #6E7FA0, #505E79); }
+      @media only screen and (min-width: 768px) {
+        header #navbar-list ul.navbar-nav {
+          display: none; } }
+      header #navbar-list ul.navbar-nav a:hover {
+        background-color: transparent; }
+    header #navbar-list .logout {
+      padding-right: 15px; }
+      @media only screen and (max-width: 767px) {
+        header #navbar-list .logout {
+          display: none; } }
+
+@media only screen and (max-width: 767px) {
+  aside .divList {
+    display: none; } }
+aside ul {
+  background-color: #FAFAFA;
+  border-right: 1px solid #CCCCCC; }
+  aside ul li {
+    border-bottom: 1px solid #CCCCCC;
+    background: #F4F4F4;
+    background: -webkit-linear-gradient(top, #FAFAFA, #C8C8CB);
+    background: -moz-linear-gradient(top, #FAFAFA, #C8C8CB);
+    background: -o-linear-gradient(top, #FAFAFA, #C8C8CB);
+    background: -ms-linear-gradient(top, #FAFAFA, #C8C8CB); }
+    aside ul li a {
+      line-height: 30px;
+      color: #444444; }
+      aside ul li a:hover {
+        color: #444444; }
+aside.p15 {
+  padding-left: 0; }
+@media only screen and (max-width: 767px) {
+  aside .lookExam h3 {
+    text-align: center; } }
+aside .lookExam .breadcrumb {
+  background-color: transparent; }
+
+/*# sourceMappingURL=homePage.css.map */

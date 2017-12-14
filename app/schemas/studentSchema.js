@@ -5,17 +5,17 @@
 const mongoose = require('mongoose');
 
 //----------------------------------------------------------------
-const config = require('../../config/config.js');
-mongoose.connect(config.dbUrl);
-mongoose.connection.on('connected', function () {
-  console.log('Mongoose connection open to ' + config.dbUrl);
-});
-mongoose.Promise = global.Promise;
+// const config = require('../../config/config.js');
+// mongoose.connect(config.dbUrl);
+// mongoose.connection.on('connected', function () {
+//   console.log('Mongoose connection open to ' + config.dbUrl);
+// });
+// mongoose.Promise = global.Promise;
 //---------------------------------------------------------------
 
 
 // ------------------------Schema--------------------------------
-const studentSchema = new mongoose.Schema({
+const StudentSchema = new mongoose.Schema({
   sno: {
     type: String,
     unique: true
@@ -60,5 +60,11 @@ const studentSchema = new mongoose.Schema({
 
 //---------------------------methods-----------------------
 
+StudentSchema.statics = {
+  findBySno:function (sno,cb) {
+    // console.log(this.findOne({sno:sno}));
+    return this.findOne({sno:sno}).exec(cb);
+  }
+};
 
-module.exports = studentSchema;
+module.exports = StudentSchema;

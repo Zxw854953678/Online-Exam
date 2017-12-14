@@ -1,0 +1,89 @@
+@import "layout";
+
+$headerColorTop: #6E7FA0;
+$headerColorBottom: #505E79;
+$asideColorTop: #FAFAFA;
+$asideColorBottom: #C8C8CB;
+$white: #ffffff;
+
+header {
+  color: $white;
+  height: 50px;
+  line-height: 50px;
+  @media only screen and (min-width: 768px) {
+    @include linearGradient(top, $headerColorTop, $headerColorBottom, #5E6E8B);
+
+  }
+  @media only screen and (max-width: 767px) {
+    @include linearGradient(top, #6E7FA0, #4D5B76, #5E6E8B);
+  }
+  &.navbar {
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+  }
+  .content, a {
+    color: $white !important;
+  }
+  #btn {
+    background-color: #DDDDDD;
+    span.icon-bar {
+      background-color: $white;
+    }
+  }
+  #navbar-list {
+    padding: 0;
+    ul.navbar-nav {
+      margin: 0;
+      @include linearGradient(top, $headerColorTop, $headerColorBottom, #5E6E8B);
+      @media only screen and (min-width: 768px) {
+        display: none;
+      }
+      a:hover{
+        background-color: transparent;
+      }
+    }
+    .logout{
+      @media only screen and (max-width: 767px) {
+        display: none;
+      }
+      padding-right: 15px;
+    }
+  }
+}
+
+aside {
+  .divList{
+    @media only screen and (max-width: 767px){
+      display: none;
+    }
+  }
+  ul {
+    background-color: #FAFAFA;
+    border-right: 1px solid #CCCCCC;
+    li {
+      border-bottom: 1px solid #CCCCCC;
+      @include linearGradient(top, $asideColorTop, $asideColorBottom, #F4F4F4);
+      a {
+        line-height: 30px;
+        color: #444444;
+        &:hover {
+          color: #444444;
+        }
+      }
+    }
+  }
+  &.p15 {
+    padding-left: 0;
+  }
+  .lookExam{
+    h3{
+      @media only screen and (max-width: 767px) {
+        text-align: center;
+      }
+    }
+    .breadcrumb{
+      background-color: transparent;
+    }
+  }
+}
