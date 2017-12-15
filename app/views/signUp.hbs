@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>学生登录</title>
+  <title>学生注册</title>
   <link rel="stylesheet" href="/utils/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="/utils/datetimepicker/jquery.datetimepicker.min.css">
   <link rel="stylesheet" href="/css/signUp.css">
@@ -22,13 +22,13 @@
       <div class="title">Sign Up</div>
       <div class="form-group has-feedback">
         <label>Student ID</label>
-        <input type="text" class="form-control" name="sno" autofocus required data-error="学号格式错误" pattern="^S[0-9]{9}$">
+        <input type="text" class="form-control" name="user[sno]" autofocus required data-error="学号格式错误" pattern="^S[0-9]{9}$">
         <span class="glyphicon form-control-feedback icon"></span>
         <div class="help-block with-errors"></div>
       </div>
       <div class="form-group has-feedback">
         <label>Password</label>
-        <input type="password" class="pwdOne form-control" name="userpwd" required pattern="^[a-zA-Z0-9$_]{6,12}$"
+        <input type="password" class="pwdOne form-control" name="user[pwd]" required pattern="^[a-zA-Z0-9$_]{6,12}$"
                data-error="密码由数字、字母、_和$组成">
         <span class="glyphicon form-control-feedback icon"></span>
         <div class="help-block with-errors"></div>
@@ -41,7 +41,7 @@
       </div>
       <div class="form-group has-feedback">
         <label>Your Name</label>
-        <input type="text" class="form-control" name="studentName" required pattern="^[a-zA-Z0-9\u4e00-\u9fa5]?$" data-error="不能为空">
+        <input type="text" class="form-control" name="user[name]" required pattern="^[A-Za-z\u4e00-\u9fa5]{2,19}$" data-error="不能为空或格式不正确">
         <span class="glyphicon form-control-feedback icon"></span>
         <div class="help-block with-errors"></div>
       </div>
@@ -49,38 +49,38 @@
         <label>sex</label>
         <div>
           <label for="male">
-            <input id="male" type="radio" class="" name="sex" checked value="male">男
+            <input id="male" type="radio" class="" name="user[sex]" checked value="male">男
           </label>
           <label for="female" class="col-md-offset-1">
-            <input id="female" type="radio" name="sex" value="female">女
+            <input id="female" type="radio" name="user[sex]" value="female">女
           </label>
         </div>
       </div>
       <div class="form-group has-feedback">
         <label>Email</label>
-        <input type="text" class="form-control" name="studentEmail" required data-error="邮箱格式错误"
+        <input type="text" class="form-control" name="user[email]" required data-error="邮箱格式错误"
                pattern="^[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?$">
         <span class="glyphicon form-control-feedback icon"></span>
         <div class="help-block with-errors"></div>
       </div>
       <div class="form-group has-feedback" id="birthDay">
         <label>Birth</label>
-        <input id="birth" type="text" class="form-control" required name="birth" data-error="格式错误，形如“1990/01/01”" pattern="^([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})/(((0[13578]|1[02])/(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))$">
+        <input id="birth" type="text" class="form-control" required name="user[birth]" data-error="格式错误，形如“1990/01/01”" pattern="^([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})/(((0[13578]|1[02])/(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))$">
         <span class="glyphicon form-control-feedback icon"></span>
         <div class="help-block with-errors"></div>
       </div>
       <div class="form-group">
         <label>Course</label>
-        <select class="form-control">
-          <option value="volvo">html课程</option>
-          <option value="saab">java课程</option>
-          <option value="opel">前端课程</option>
-          <option value="audi">大数据课程</option>
+        <select class="form-control" name="user[course]">
+          <option value="html课程">html课程</option>
+          <option value="java课程">java课程</option>
+          <option value="前端课程">前端课程</option>
+          <option value="大数据课程">大数据课程</option>
         </select>
       </div>
       <div class="form-group">
         <label>Class</label>
-        <input type="text" class="form-control" name="studentClass" required pattern="^[1-9][0-9]*$" data-error="输入纯数字，比如1,2,...">
+        <input type="text" class="form-control" name="user[class]" required pattern="^[1-9][0-9]*$" data-error="输入纯数字，比如1,2,...">
         <span class="glyphicon form-control-feedback icon"></span>
         <div class="help-block with-errors"></div>
       </div>

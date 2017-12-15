@@ -3,7 +3,9 @@
  */
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
+const SALT_WORK_FACTOR = 10;
 //----------------------------------------------------------------
 // const config = require('../../config/config.js');
 // mongoose.connect(config.dbUrl);
@@ -38,17 +40,20 @@ const StudentSchema = new mongoose.Schema({
       default: new Date()
     }
   },
-  exam: [{
-    eTime: {
+  nextExam: [{
+    createTime: {
       type: Date,
-      default: new Date(),
-      unique:true
+      default: new Date()
     },
+    rangeExam: []
+  }],
+  exam: [{
+    eTime: Date,
     eTitle: String,
     eScore: Number,
     eContent: [{
       question: String,//题目
-      questionType:Number,
+      questionType: Number,
       options: [String],//选项
       answer: [String],//回答
       value: Number,//分值
@@ -59,12 +64,26 @@ const StudentSchema = new mongoose.Schema({
 });
 
 //---------------------------methods-----------------------
-
-StudentSchema.statics = {
-  findBySno:function (sno,cb) {
-    // console.log(this.findOne({sno:sno}));
-    return this.findOne({sno:sno}).exec(cb);
+StudentSchema.methods = {
+  comparePwd(pwd, cb){
+    "use strict";
+    bcrypt.compare(pwd, this.pwd, (err, isMatch)=> {
+      cb(err, isMatch);
+    });
   }
 };
+
+StudentSchema.pre('save', function (next) {
+  let student = this;
+
+  // 加密
+  bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) => {
+    if (err) throw err;
+    bcrypt.hash(student.pwd, salt, (err, hash) => {
+      student.pwd = hash;
+      next();
+    });
+  });
+});
 
 module.exports = StudentSchema;

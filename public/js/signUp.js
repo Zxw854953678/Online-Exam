@@ -21,8 +21,19 @@ $(function () {
   console.log(maxTime);
   $('#birth').datetimepicker({
     timepicker: false,
-    validateOnBlur:false,
+    validateOnBlur: false,
     format: 'Y/m/d',
     value: ""
+  });
+});
+
+$(function () {
+  $('form').on('submit', function (e) {
+    "use strict";
+    if (!$("#agree").is(':checked')) {
+      e.preventDefault();
+      alert("请阅读并同意条款");
+      $(this).focus();
+    }
   });
 });
