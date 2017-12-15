@@ -13,7 +13,7 @@ exports.action = function (req, res, next) {
   //数据库信息比对，成功-调转到app，失败-重新注册
 
   const _user = req.body.user;
-  
+
   Student.findOne({sno: _user.sno}, (err, result)=> {
     "use strict";
     if (err) {
@@ -44,7 +44,6 @@ exports.action = function (req, res, next) {
       console.log(data);
 
       const student = new Student(data);
-      student.markModified("exam");
       student.save((err, result)=> {
         if (err) {
           console.log(err);
