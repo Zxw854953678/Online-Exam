@@ -4,19 +4,20 @@
 
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 //----------------------------------------------------------------
-const config = require('../../config/config.js');
-mongoose.connect(config.dbUrl);
-mongoose.connection.on('connected', function () {
-  console.log('Mongoose connection open to ' + config.dbUrl);
-});
-mongoose.Promise = global.Promise;
+// const config = require('../../config/config.js');
+// mongoose.connect(config.dbUrl);
+// mongoose.connection.on('connected', function () {
+//   console.log('Mongoose connection open to ' + config.dbUrl);
+// });
+// mongoose.Promise = global.Promise;
 //---------------------------------------------------------------
 
 
 // ------------------------Schema--------------------------------
-const teacherSchema = new mongoose.Schema({
+const TeacherSchema = new mongoose.Schema({
   tno: {
     type: String,
     unique: true
@@ -45,4 +46,15 @@ const teacherSchema = new mongoose.Schema({
   }
 });
 
-module.exports = teacherSchema;
+//---------------------------methods-----------------------
+TeacherSchema.methods = {
+  comparePwd(pwd){
+    "use strict";
+    if(pwd === this.pwd){
+      return true;
+    }
+    return false;
+  }
+};
+
+module.exports = TeacherSchema;

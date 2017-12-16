@@ -75,7 +75,11 @@ StudentSchema.methods = {
 
 StudentSchema.pre('save', function (next) {
   let student = this;
-
+  if (this.isNew) {
+    this.meta.createAt = this.meta.updateAt = Date.now();
+  } else {
+    this.meta.updateAt = Date.now();
+  }
   // 加密
   bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) => {
     if (err) throw err;
