@@ -6,6 +6,7 @@ const signIn = require('../app/controllers/signIn.js');
 const signUp = require('../app/controllers/signUp.js');
 const homePage = require('../app/controllers/homePage.js');
 const detailsExam = require('../app/controllers/detailsExamPaper.js');
+const releaseExam = require('../app/controllers/releaseExam.js');
 
 module.exports = function (app) {
   // 注册 -只有学生可以注册
@@ -27,6 +28,10 @@ module.exports = function (app) {
 
   // 登出
   app.get("/logout", homePage.logout);
+
+  // teacher 发布试卷
+  app.get("/teacher/releaseExam",releaseExam.show);
+  app.post("/teacher/releaseExam",releaseExam.action);
 
 };
 
