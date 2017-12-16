@@ -11,9 +11,10 @@ exports.logout = function (req, res) {
 
 exports.show = function (req, res) {
   //session里面找 sno 和 isTeacher，取出name和exam信息
-  // const sno = "S201702001";//=======================
-  const sno = "9088989";//=======================
-  const isTeacher = true;
+
+  const sno = req.session.name;
+  const isTeacher = req.session.isTeacher;
+
   const exam = [];
   if (isTeacher) {
     Student.find({}, (err, result)=> {
@@ -42,8 +43,8 @@ exports.show = function (req, res) {
       }
     });
 
-    Teacher.findOne({tno:"9088989"}).exec((err, result)=> {
-      console.log(exam);
+    Teacher.findOne({tno:sno}).exec((err, result)=> {
+      console.log(sno);
       console.log(result);
       const data = {
         name: result.personalInfo.name || "",
@@ -62,7 +63,6 @@ exports.show = function (req, res) {
       };
       res.render("homePage", data);
     });
-    // res.send("dd");
   }
   else {
     Student.findOne({sno}).exec((err, result)=> {
